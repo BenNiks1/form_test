@@ -1,32 +1,46 @@
 import React from "react";
 import { Input } from "../components/Input";
 import { Select } from "../components/Select";
+import { useData } from "../DataContext";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { useHistory } from "react-router";
+import { Link } from "react-router-dom";
+import {RightArrowSvg} from '../icons'
 
 const schema = yup.object().shape({
-  fio: yup
-    .string()
-    .matches(/^([^0-9*])$/, "Should not contain numbers")
-    .required("empty"),
+  fio: yup.string().required("empty"),
   city: yup.string().required("empty"),
   address: yup.string().required("empty"),
   index: yup.string().required("empty"),
 });
 export const Info = () => {
   const history = useHistory();
+  const { data, setValues } = useData();
   const { register, handleSubmit, errors } = useForm({
+    defaultValues: {
+      fio: data.fio,
+      city: data.city,
+      address: data.address,
+      index: data.index,
+    },
     mode: "onBlur",
     resolver: yupResolver(schema),
   });
 
+  console.log(errors);
   const onSubmit = (data) => {
     history.push("/payment");
+    setValues(data);
   };
   return (
     <div className="container">
+      <nav className='nav'>
+      <Link to='/' className='nav__link active'>Доставка</Link>
+      <i className='nav__icon'><RightArrowSvg /></i>
+      <Link to='#' className='nav__link '>Оплата</Link>
+      </nav>
       <h2 className="title">Информация для доставки</h2>
       <form action="#" className="form" onSubmit={handleSubmit(onSubmit)}>
         <Input
@@ -36,8 +50,8 @@ export const Info = () => {
           name={"fio"}
           placeholder={"ФИО"}
           type={"text"}
-          error={!!errors.fio}
-          helpertext={errors?.fio?.message}
+          error={errors.fio}
+          
         />
         <Input
           title={"Адресс"}
@@ -46,8 +60,8 @@ export const Info = () => {
           name={"city"}
           placeholder={"Город"}
           type={"text"}
-          error={!!errors.city}
-          helpertext={errors?.city?.message}
+          error={errors.city}
+          helperText={errors.fio}
         />
         <Input
           ref={register}
@@ -55,8 +69,7 @@ export const Info = () => {
           name={"address"}
           placeholder={"Адрес"}
           type={"text"}
-          error={!!errors.address}
-          helpertext={errors?.address?.message}
+          error={errors.address}
         />
         <div className="form__wrapper">
           <Select
@@ -64,6 +77,7 @@ export const Info = () => {
             id={"country"}
             ref={register}
             defaultValue={"default"}
+            error={errors.address}
             options={[
               {
                 id: "vV5N5mzh20",
@@ -82,8 +96,7 @@ export const Info = () => {
             name={"index"}
             placeholder={"Индекс"}
             type={"text"}
-            error={!!errors.index}
-            helpertext={errors?.index?.message}
+            error={errors.index}
           />
         </div>
 

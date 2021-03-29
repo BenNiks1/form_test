@@ -1,9 +1,9 @@
-import React, { createContext, useContext } from "react";
+import React, { createContext, useState, useContext } from "react";
 
 const DataContext = createContext();
 
-export const DataProvider = ({ cildren }) => {
-  const [data, setData] = React.useState({});
+export const DataProvider = ({ children }) => {
+  const [data, setData] = useState({});
 
   const setValues = (values) => {
     setData((prevData) => ({
@@ -14,7 +14,7 @@ export const DataProvider = ({ cildren }) => {
 
   return (
     <DataContext.Provider value={{ data, setValues }}>
-      {cildren}
+      {children}
     </DataContext.Provider>
   );
 };

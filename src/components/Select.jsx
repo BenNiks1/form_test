@@ -1,4 +1,5 @@
 import React from "react";
+import classnames from "classnames";
 
 export const Select = React.forwardRef((props, ref) => (
   <select
@@ -6,12 +7,13 @@ export const Select = React.forwardRef((props, ref) => (
     id={props.id}
     defaultValue={props.defaultValue}
     ref={ref}
-    className="form__select"
+    error={props.error}
+    className={classnames("form__select", { error: props.error })}
   >
-    {props.options.map(({ value, disabled, id, defaultValue}) => (
+    {props.options.map(({ value, disabled, id, defaultValue }) => (
       <option
         disabled={disabled}
-        value={defaultValue?defaultValue:value}
+        value={defaultValue ? defaultValue : value}
         key={id}
       >
         {value}

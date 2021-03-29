@@ -10,7 +10,7 @@
 }
 
 body {
-  font-family: "HelveticaNeueCyr";
+  
   background: #e5e5e5;
 }
 
@@ -28,12 +28,13 @@ body {
   font-size: 26px;
   line-height: 31px;
   color: #101d94;
+
 }
 
 .form {
-  &__input-title {
-    margin: 20px 0;
 
+  &__input-title {
+    margin: 20px 0 6px;
     font-weight: 300;
     font-size: 16px;
     line-height: 18px;
@@ -46,6 +47,13 @@ body {
 
     border: 1px solid #dedcdc;
     border-radius: 5px;
+
+    font-size: 16px;
+    line-height: 18px;
+    color: #1a1a1a;
+    &:invalid {
+      border: 1px solid red;
+    }
     &::placeholder {
       font-size: 16px;
       line-height: 18px;
@@ -55,10 +63,14 @@ body {
 
   &__wrapper {
     display: grid;
-    grid-template-columns: 180px 120px;
+    grid-template-columns: repeat(2, 1fr);
     grid-gap: 20px;
   }
+  .payment {
+    grid-template-columns: repeat(2, 95px);
+  }
   &__select {
+    width: 180px;
     max-height: 39px;
     padding: 0 15px;
     border: 1px solid #dedcdc;
@@ -84,5 +96,46 @@ body {
     background: rgba(25, 165, 39, 0.8);
     border-radius: 5px;
     border: 0;
+    cursor: pointer;
+  }
+}
+
+.result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 194px 0 144px 0;
+
+  &__text {
+    margin-top: 10px;
+
+    font-size: 26px;
+    line-height: 31px;
+    color: #000000;
+  }
+}
+
+.error {
+  border: 1px solid red;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  margin-bottom: 33px;
+  &__link {
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 14px;
+    color: #979797;
+  }
+  &__icon {
+    margin: 0 15px;
+  }
+
+  .active{
+    color: #101D94;
   }
 }
