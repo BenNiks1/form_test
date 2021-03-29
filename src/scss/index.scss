@@ -1,0 +1,141 @@
+@import "./fonts";
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+}
+
+body {
+  
+  background: #e5e5e5;
+}
+
+.container {
+  margin: 100px auto;
+  padding: 20px 40px 69px 40px;
+  max-width: 401px;
+  background: #ffffff;
+  box-shadow: 0px 0px 10px #ebf0ff;
+  border-radius: 24px;
+}
+
+.title {
+  font-weight: 300;
+  font-size: 26px;
+  line-height: 31px;
+  color: #101d94;
+
+}
+
+.form {
+
+  &__input-title {
+    margin: 20px 0 6px;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 18px;
+    color: #101d94;
+  }
+  &__input {
+    margin-bottom: 10px;
+    padding: 11px 15px;
+    width: 100%;
+
+    border: 1px solid #dedcdc;
+    border-radius: 5px;
+
+    font-size: 16px;
+    line-height: 18px;
+    color: #1a1a1a;
+    &:invalid {
+      border: 1px solid red;
+    }
+    &::placeholder {
+      font-size: 16px;
+      line-height: 18px;
+      color: #6b6b6b;
+    }
+  }
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+  }
+  .payment {
+    grid-template-columns: repeat(2, 95px);
+  }
+  &__select {
+    width: 180px;
+    max-height: 39px;
+    padding: 0 15px;
+    border: 1px solid #dedcdc;
+    border-radius: 5px;
+    appearance: none;
+    background: url(../img/arrow.png) no-repeat right #fff;
+    background-position-x: 153px;
+
+    font-size: 16px;
+    line-height: 18px;
+    color: #6b6b6b;
+    cursor: pointer;
+  }
+
+  &__btn {
+    margin-top: 20px;
+    padding: 13px 39px;
+
+    color: #fff;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    background: rgba(25, 165, 39, 0.8);
+    border-radius: 5px;
+    border: 0;
+    cursor: pointer;
+  }
+}
+
+.result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 194px 0 144px 0;
+
+  &__text {
+    margin-top: 10px;
+
+    font-size: 26px;
+    line-height: 31px;
+    color: #000000;
+  }
+}
+
+.error {
+  border: 1px solid red;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  margin-bottom: 33px;
+  &__link {
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 14px;
+    color: #979797;
+  }
+  &__icon {
+    margin: 0 15px;
+  }
+
+  .active{
+    color: #101D94;
+  }
+}
