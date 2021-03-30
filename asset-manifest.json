@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/form_test/static/css/main.32f5a65c.chunk.css",
+    "main.css": "/form_test/static/css/main.2651868a.chunk.css",
     "main.js": "/form_test/static/js/main.4871f2c4.chunk.js",
     "main.js.map": "/form_test/static/js/main.4871f2c4.chunk.js.map",
     "runtime-main.js": "/form_test/static/js/runtime-main.1fec0d08.js",
@@ -8,14 +8,13 @@
     "static/js/2.9f419ff2.chunk.js": "/form_test/static/js/2.9f419ff2.chunk.js",
     "static/js/2.9f419ff2.chunk.js.map": "/form_test/static/js/2.9f419ff2.chunk.js.map",
     "index.html": "/form_test/index.html",
-    "static/css/main.32f5a65c.chunk.css.map": "/form_test/static/css/main.32f5a65c.chunk.css.map",
-    "static/js/2.9f419ff2.chunk.js.LICENSE.txt": "/form_test/static/js/2.9f419ff2.chunk.js.LICENSE.txt",
-    "static/media/index.scss": "/form_test/static/media/HelveticaNeueCyr-Light.fa63aa9c.woff"
+    "static/css/main.2651868a.chunk.css.map": "/form_test/static/css/main.2651868a.chunk.css.map",
+    "static/js/2.9f419ff2.chunk.js.LICENSE.txt": "/form_test/static/js/2.9f419ff2.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.1fec0d08.js",
     "static/js/2.9f419ff2.chunk.js",
-    "static/css/main.32f5a65c.chunk.css",
+    "static/css/main.2651868a.chunk.css",
     "static/js/main.4871f2c4.chunk.js"
   ]
 }
